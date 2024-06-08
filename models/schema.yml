@@ -1,0 +1,19 @@
+version: 2
+
+models: 
+  - name: src_orders
+    columns: 
+      - name: O_ORDERKEY
+        tests:
+          - not_null
+          - unique
+
+  - name: src_customers
+    columns: 
+      - name: C_CUSTKEY
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('src_orders')
+              field: O_CUSTKEY
