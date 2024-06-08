@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: kiff
+    database: Snowflake_sample_data
+    schema: TPCH_SF001
+    tables:
+      - name: customer
+      - name: LINEITEM
+      - name: NATION
+      - name: ORDERS
+      - name: PART
+      - name: PARTSUPP
+      - name: REGION
+      - name: SUPPLIER
