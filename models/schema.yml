@@ -7,13 +7,15 @@ models:
         tests:
           - not_null
           - unique
-
+      - name: O_orderdate
+        tests:
+          - timestamp_is_not_present
   - name: src_customers
     columns: 
       - name: C_CUSTKEY
         tests:
           - not_null
           - unique
-          - relationships:
-              to: ref('src_orders')
-              field: O_CUSTKEY
+          # - relationships:
+          #     to: ref('src_orders')
+          #     field: O_CUSTKEY

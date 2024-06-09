@@ -5,6 +5,9 @@
 name: 'kiff_ecommerce'
 version: '1.0.0'
 
+dbt-cloud:
+    project-id: 318182
+
 # This setting configures which "profile" dbt uses for this project.
 profile: 'kiff_ecommerce'
 
