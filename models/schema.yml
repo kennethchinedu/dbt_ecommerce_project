@@ -7,6 +7,7 @@ models:
         tests:
           - not_null
           - unique
+          - dbt_utils.at_least_one
       - name: O_orderdate
         tests:
           - timestamp_is_not_present
