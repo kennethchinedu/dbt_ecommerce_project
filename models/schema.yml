@@ -2,8 +2,10 @@ version: 2
 
 models: 
   - name: src_orders
+    description: This is the source table for orders
     columns: 
       - name: O_ORDERKEY
+        description: This is the primary key of this table 
         tests:
           - not_null
           - unique
@@ -12,6 +14,7 @@ models:
         tests:
           - timestamp_is_not_present
   - name: src_customers
+    description: This is the source table for customers
     columns: 
       - name: C_CUSTKEY
         tests:

@@ -6,10 +6,18 @@ sources:
     schema: TPCH_SF001
     tables:
       - name: customer
+        description: '{{ doc("sources") }}'
       - name: LINEITEM
+        description: This is the source table for items
       - name: NATION
+        description: This is the source table for nation
       - name: ORDERS
+        description: This is the source table for orders
       - name: PART
+        description: This is the source table for part
       - name: PARTSUPP
+        description: This is the source table for partsupp
       - name: REGION
+        description: This is the source table for region
       - name: SUPPLIER
+        description: This is the source table for supplier
