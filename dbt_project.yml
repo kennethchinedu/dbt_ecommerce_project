@@ -39,4 +39,3 @@ models:
       +materialized: ephemeral
     dim:
       +materialized: view
-
