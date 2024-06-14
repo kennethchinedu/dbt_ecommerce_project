@@ -14,7 +14,7 @@ models:
         tests:
           - timestamp_is_not_present
   - name: src_customers
-    description: This is the source table for customers
+    description: This is the source table for customers 
     columns: 
       - name: C_CUSTKEY
         tests:
