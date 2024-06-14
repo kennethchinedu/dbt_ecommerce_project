@@ -24,3 +24,4 @@ kiff_ecommerce:
       schema: Analytics
       threads: 1
       client_session_keep_alive: false 
+      
