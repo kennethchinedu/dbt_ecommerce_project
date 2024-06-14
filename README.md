@@ -1,4 +1,3 @@
-```markdown
 # DBT Project: Data Models
 
 ## Overview
