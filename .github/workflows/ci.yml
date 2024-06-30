@@ -1,0 +1,36 @@
+name: CI Workflow
+
+on: 
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev 
+  workflow_dispatch:
+
+jobs:
+  Test:
+    name: 'Run unit test'
+    defaults:
+      run:
+        shell: bash
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2 
+
+      - name: Run tests
+        run: echo "Running unit tests..."
+        shell: bash
+
+  goodbye:
+    needs: Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye world
+        run: echo "Bye World"
+        shell: bash
