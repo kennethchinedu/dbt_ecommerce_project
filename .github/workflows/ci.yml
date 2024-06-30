@@ -52,7 +52,7 @@ jobs:
       - name: Prepare dbt profiles
         run: |
           mkdir -p ~/.dbt
-          echo 'default:' > ~/.dbt/profiles.yml
+          echo 'kiff_ecommerce':' > ~/.dbt/profiles.yml
           echo '  target: dev' >> ~/.dbt/profiles.yml
           echo '  outputs:' >> ~/.dbt/profiles.yml
           echo '    dev:' >> ~/.dbt/profiles.yml
