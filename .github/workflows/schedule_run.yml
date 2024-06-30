@@ -65,6 +65,10 @@ jobs:
         run: dbt deps --profiles-dir ~/.dbt
         shell: bash
 
+      - name: Run run with kiff_ecommerce profile
+        run: dbt test --profiles-dir ~/.dbt --profile kiff_ecommerce
+        shell: bash
+
       - name: Run dbt test with kiff_ecommerce profile
         run: dbt test --profiles-dir ~/.dbt --profile kiff_ecommerce
         shell: bash

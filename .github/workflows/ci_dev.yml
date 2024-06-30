@@ -51,6 +51,14 @@ jobs:
           pip install -r setup/requirements.txt
         shell: bash
 
+      - name: check sql query
+        uses: actions/checkout@master
+        with:
+          post-comment: true
+          risk-level: 3
+          verbose: false
+          token: ${{ secrets.TOKEN }}
+
       - name: Prepare dbt profiles
         run: |
           mkdir -p ~/.dbt
