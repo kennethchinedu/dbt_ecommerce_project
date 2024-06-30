@@ -17,8 +17,7 @@ jobs:
       run:
         shell: bash
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/dev'
-
+    
     environment: dev
 
     env:
