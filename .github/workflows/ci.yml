@@ -25,6 +25,7 @@ jobs:
       SNOWFLAKE_PASSWORD: ${{ secrets.PASSWORD }}
       SNOWFLAKE_DATABASE: ${{ secrets.DATABASE }}
       SNOWFLAKE_WAREHOUSE: ${{ secrets.WAREHOUSE }}
+      SNOWFLAKE_SCHEMA: ${{ secrets.SCHEMA }}
 
     steps:
       - name: Checkout repository
@@ -62,6 +63,7 @@ jobs:
           echo "      password: $SNOWFLAKE_PASSWORD" >> ~/.dbt/profiles.yml
           echo "      database: $SNOWFLAKE_DATABASE" >> ~/.dbt/profiles.yml
           echo "      warehouse: $SNOWFLAKE_WAREHOUSE" >> ~/.dbt/profiles.yml
+          echo "      schema: $SNOWFLAKE_SCHEMA" >> ~/.dbt/profiles.yml
         shell: bash
 
       - name: Run dbt deps
