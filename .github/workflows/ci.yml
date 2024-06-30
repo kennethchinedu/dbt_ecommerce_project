@@ -20,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-      SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
-      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-      SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
-      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+      SNOWFLAKE_ACCOUNT: ${{ secrets.ACCOUNT }}
+      SNOWFLAKE_USER: ${{ secrets.USER }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.PASSWORD }}
+      SNOWFLAKE_DATABASE: ${{ secrets.DATABASE }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.WAREHOUSE }}
 
     steps:
       - name: Checkout repository
