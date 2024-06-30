@@ -1,4 +1,4 @@
-name: CI_dev Workflow
+name: schedule_run
 
 on:
     schedule:

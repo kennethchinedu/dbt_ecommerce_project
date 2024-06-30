@@ -51,14 +51,6 @@ jobs:
           pip install -r setup/requirements.txt
         shell: bash
 
-      - name: check sql query
-        uses: actions/checkout@master
-        with:
-          post-comment: true
-          risk-level: 3
-          verbose: false
-          token: ${{ secrets.TOKEN }}
-
       - name: Prepare dbt profiles
         run: |
           mkdir -p ~/.dbt
@@ -77,6 +69,10 @@ jobs:
 
       - name: Run dbt deps
         run: dbt deps --profiles-dir ~/.dbt
+        shell: bash
+
+      - name: Run dbt with kiff_ecommerce profile
+        run: dbt run --profiles-dir ~/.dbt --profile kiff_ecommerce
         shell: bash
 
       - name: Run dbt test with kiff_ecommerce profile
