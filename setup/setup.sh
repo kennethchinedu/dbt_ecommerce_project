@@ -17,7 +17,7 @@ pip install --upgrade pip
 
 # Install the requirements
 echo "Installing requirements..."
-pip install -r requirements.txt
+pip install -r setup/requirements.txt
 
 # Notify the user
 echo "Setup complete. Virtual environment '$ENV_NAME' is ready and activated."
