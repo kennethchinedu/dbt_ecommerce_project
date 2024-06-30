@@ -20,11 +20,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      SNOWFLAKE_ACCOUNT: ${{ secrets.ACCOUNT }}
-      SNOWFLAKE_USER: ${{ secrets.USER }}
-      SNOWFLAKE_PASSWORD: ${{ secrets.PASSWORD }}
-      SNOWFLAKE_DATABASE: ${{ secrets.DATABASE }}
-      SNOWFLAKE_WAREHOUSE: ${{ secrets.WAREHOUSE }}
+      SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+      SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+      SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+      SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
 
     steps:
       - name: Checkout repository
@@ -33,7 +33,7 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' 
+          python-version: '3.x'  # Replace with your Python version if needed
 
       - name: Install dbt
         run: pip install dbt
@@ -52,7 +52,7 @@ jobs:
       - name: Prepare dbt profiles
         run: |
           mkdir -p ~/.dbt
-          echo 'kiff_ecommerce' > ~/.dbt/profiles.yml
+          echo 'kiff_ecommerce:' > ~/.dbt/profiles.yml
           echo '  target: dev' >> ~/.dbt/profiles.yml
           echo '  outputs:' >> ~/.dbt/profiles.yml
           echo '    dev:' >> ~/.dbt/profiles.yml
@@ -68,8 +68,8 @@ jobs:
         run: dbt deps --profiles-dir ~/.dbt
         shell: bash
 
-      - name: Run dbt test
-        run: dbt test --profiles-dir ~/.dbt
+      - name: Run dbt test with kiff_ecommerce profile
+        run: dbt test --profiles-dir ~/.dbt --profile kiff_ecommerce
         shell: bash
 
   goodbye:
