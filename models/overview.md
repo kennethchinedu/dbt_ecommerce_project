@@ -9,5 +9,3 @@ as well as the repo for this project \[here](https://github.com/dbt-labs/mrr-pla
 
 {% enddocs %}
 
-
-
