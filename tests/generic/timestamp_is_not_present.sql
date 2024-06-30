@@ -3,7 +3,8 @@
 SELECT * 
 FROM {{ model }}
 WHERE 
-    {{ column_name}} > CURRENT_TIMESTAMP()
+    {{ column_name}} < CURRENT_TIMESTAMP()
 
 {% endtest %}
+
 
